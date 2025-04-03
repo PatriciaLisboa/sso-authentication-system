@@ -1,4 +1,4 @@
-# Sistema de Autenticação SSO
+# SSO Authentication System
 
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -7,111 +7,111 @@
 ![OpenID Connect](https://img.shields.io/badge/OpenID_Connect-FF6B6B?style=for-the-badge)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-Um sistema de autenticação Single Sign-On (SSO) robusto e seguro, implementado com Laravel, que suporta OAuth 2.0 e OpenID Connect. Este projeto oferece uma solução completa para gerenciamento de autenticação, autorização e identidade digital.
+A robust and secure Single Sign-On (SSO) authentication system implemented with Laravel, supporting OAuth 2.0 and OpenID Connect. This project provides a complete solution for authentication, authorization, and digital identity management.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Autenticação Multi-fator (MFA)**: Suporte a autenticação de dois fatores usando Google Authenticator
-- **OAuth 2.0**: Implementação completa do protocolo OAuth 2.0 para autorização segura
-- **OpenID Connect**: Suporte ao protocolo OpenID Connect para autenticação e gerenciamento de identidade
-- **Gerenciamento de Clientes OAuth**: Interface intuitiva para criar e gerenciar clientes OAuth
-- **Gerenciamento de Escopos**: Controle granular de permissões através de escopos OAuth
-- **Gerenciamento de Tokens**: Visualização e revogação de tokens de acesso
-- **Log de Auditoria**: Rastreamento completo de todas as ações realizadas no sistema
-- **Interface Responsiva**: Design moderno e responsivo usando Bootstrap 5 e Bootstrap Icons
-- **Dashboard Intuitivo**: Painel de controle com visão geral do sistema e acesso rápido às funcionalidades
+- **Multi-factor Authentication (MFA)**: Support for two-factor authentication using Google Authenticator
+- **OAuth 2.0**: Complete implementation of the OAuth 2.0 protocol for secure authorization
+- **OpenID Connect**: Support for the OpenID Connect protocol for authentication and identity management
+- **OAuth Clients Management**: Intuitive interface for creating and managing OAuth clients
+- **Scopes Management**: Granular permission control through OAuth scopes
+- **Tokens Management**: View and revoke access tokens
+- **Audit Logging**: Complete tracking of all system actions
+- **Responsive Interface**: Modern and responsive design using Bootstrap 5 and Bootstrap Icons
+- **Intuitive Dashboard**: Control panel with system overview and quick access to functionalities
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-- **Laravel 10**: Framework PHP para desenvolvimento web
-- **Laravel Passport**: Implementação de OAuth 2.0 para Laravel
-- **Bootstrap 5**: Framework CSS para design responsivo
-- **Bootstrap Icons**: Biblioteca de ícones para interface moderna
-- **Vite**: Ferramenta de build para assets frontend
-- **SQLite**: Banco de dados para desenvolvimento (configurável para outros bancos)
-- **PHP 8.3**: Versão mais recente do PHP com recursos modernos
+- **Laravel 10**: PHP framework for web development
+- **Laravel Passport**: OAuth 2.0 implementation for Laravel
+- **Bootstrap 5**: CSS framework for responsive design
+- **Bootstrap Icons**: Icon library for modern interface
+- **Vite**: Build tool for frontend assets
+- **SQLite**: Database for development (configurable for other databases)
+- **PHP 8.3**: Latest PHP version with modern features
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
-- PHP 8.3 ou superior
-- Composer 2.0 ou superior
-- Node.js 18 ou superior e NPM
+- PHP 8.3 or higher
+- Composer 2.0 or higher
+- Node.js 18 or higher and NPM
 - Git
 
-## 🔧 Instalação
+## 🔧 Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 ```bash
 git clone git@github.com:PatriciaLisboa/SSO-Authentication-System.git
 cd SSO-Authentication-System
 ```
 
-2. Instale as dependências do PHP:
+2. Install PHP dependencies:
 ```bash
 composer install
 ```
 
-3. Instale as dependências do Node.js:
+3. Install Node.js dependencies:
 ```bash
 npm install
 ```
 
-4. Copie o arquivo de ambiente e configure-o:
+4. Copy the environment file and configure it:
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
-5. Configure o banco de dados no arquivo `.env`:
+5. Configure the database in the `.env` file:
 ```bash
 DB_CONNECTION=sqlite
 ```
 
-6. Crie o arquivo do banco de dados SQLite:
+6. Create the SQLite database file:
 ```bash
 touch database/database.sqlite
 ```
 
-7. Execute as migrações:
+7. Run the migrations:
 ```bash
 php artisan migrate
 ```
 
-8. Compile os assets:
+8. Compile the assets:
 ```bash
 npm run build
 ```
 
-9. Inicie o servidor:
+9. Start the server:
 ```bash
 php artisan serve
 ```
 
-10. Acesse a rota de configuração inicial para criar um usuário e cliente de teste:
+10. Access the initial setup route to create a test user and client:
 ```
 http://127.0.0.1:8000/setup-test
 ```
 
-## 🔐 Credenciais de Teste
+## 🔐 Test Credentials
 
-Após executar a rota de configuração inicial, você pode fazer login com:
+After running the initial setup route, you can log in with:
 
 - **Email**: test@example.com
-- **Senha**: password123
+- **Password**: password123
 
-## 📚 Documentação da API
+## 📚 API Documentation
 
-O sistema expõe endpoints OAuth 2.0 e OpenID Connect padrão:
+The system exposes standard OAuth 2.0 and OpenID Connect endpoints:
 
-- **Autorização**: `/oauth/authorize`
+- **Authorization**: `/oauth/authorize`
 - **Token**: `/oauth/token`
 - **UserInfo**: `/oauth/userinfo`
 - **JWKS**: `/oauth/jwks`
 
-### Exemplo de Uso da API
+### API Usage Example
 
 ```bash
-# Obter token de acesso
+# Get access token
 curl -X POST http://localhost:8000/oauth/token \
   -H "Content-Type: application/json" \
   -d '{
@@ -124,30 +124,30 @@ curl -X POST http://localhost:8000/oauth/token \
   }'
 ```
 
-## 🔍 Logs de Auditoria
+## 🔍 Audit Logs
 
-O sistema mantém um registro detalhado de todas as ações realizadas, incluindo:
+The system maintains a detailed record of all actions performed, including:
 
-- Criação, atualização e exclusão de recursos
-- Autenticações e autorizações
-- Gerenciamento de tokens
-- Alterações de configuração
+- Resource creation, updates, and deletion
+- Authentication and authorization
+- Token management
+- Configuration changes
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Autora
+## 👤 Author
 
 **Patrícia Lisboa**
 
@@ -156,4 +156,4 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 ---
 
-⭐️ Se você gostou deste projeto, considere dar uma estrela no GitHub!
+⭐️ If you like this project, please consider giving it a star on GitHub!
