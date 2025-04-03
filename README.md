@@ -5,6 +5,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![OAuth](https://img.shields.io/badge/OAuth-2.0-FF6B6B?style=for-the-badge)
 ![OpenID Connect](https://img.shields.io/badge/OpenID_Connect-FF6B6B?style=for-the-badge)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 Um sistema de autenticação Single Sign-On (SSO) robusto e seguro, implementado com Laravel, que suporta OAuth 2.0 e OpenID Connect. Este projeto oferece uma solução completa para gerenciamento de autenticação, autorização e identidade digital.
 
@@ -13,17 +14,19 @@ Um sistema de autenticação Single Sign-On (SSO) robusto e seguro, implementado
 - **Autenticação Multi-fator (MFA)**: Suporte a autenticação de dois fatores usando Google Authenticator
 - **OAuth 2.0**: Implementação completa do protocolo OAuth 2.0 para autorização segura
 - **OpenID Connect**: Suporte ao protocolo OpenID Connect para autenticação e gerenciamento de identidade
-- **Gerenciamento de Clientes OAuth**: Interface para criar e gerenciar clientes OAuth
+- **Gerenciamento de Clientes OAuth**: Interface intuitiva para criar e gerenciar clientes OAuth
 - **Gerenciamento de Escopos**: Controle granular de permissões através de escopos OAuth
 - **Gerenciamento de Tokens**: Visualização e revogação de tokens de acesso
 - **Log de Auditoria**: Rastreamento completo de todas as ações realizadas no sistema
-- **Interface Responsiva**: Design moderno e responsivo usando Bootstrap
+- **Interface Responsiva**: Design moderno e responsivo usando Bootstrap 5 e Bootstrap Icons
+- **Dashboard Intuitivo**: Painel de controle com visão geral do sistema e acesso rápido às funcionalidades
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Laravel**: Framework PHP para desenvolvimento web
+- **Laravel 10**: Framework PHP para desenvolvimento web
 - **Laravel Passport**: Implementação de OAuth 2.0 para Laravel
-- **Bootstrap**: Framework CSS para design responsivo
+- **Bootstrap 5**: Framework CSS para design responsivo
+- **Bootstrap Icons**: Biblioteca de ícones para interface moderna
 - **Vite**: Ferramenta de build para assets frontend
 - **SQLite**: Banco de dados para desenvolvimento (configurável para outros bancos)
 - **PHP 8.3**: Versão mais recente do PHP com recursos modernos
@@ -31,8 +34,8 @@ Um sistema de autenticação Single Sign-On (SSO) robusto e seguro, implementado
 ## 📋 Pré-requisitos
 
 - PHP 8.3 ou superior
-- Composer
-- Node.js e NPM
+- Composer 2.0 ou superior
+- Node.js 18 ou superior e NPM
 - Git
 
 ## 🔧 Instalação
@@ -105,6 +108,22 @@ O sistema expõe endpoints OAuth 2.0 e OpenID Connect padrão:
 - **UserInfo**: `/oauth/userinfo`
 - **JWKS**: `/oauth/jwks`
 
+### Exemplo de Uso da API
+
+```bash
+# Obter token de acesso
+curl -X POST http://localhost:8000/oauth/token \
+  -H "Content-Type: application/json" \
+  -d '{
+    "grant_type": "password",
+    "client_id": "client-id",
+    "client_secret": "client-secret",
+    "username": "test@example.com",
+    "password": "password123",
+    "scope": "*"
+  }'
+```
+
 ## 🔍 Logs de Auditoria
 
 O sistema mantém um registro detalhado de todas as ações realizadas, incluindo:
@@ -118,6 +137,12 @@ O sistema mantém um registro detalhado de todas as ações realizadas, incluind
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
 ## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
@@ -127,6 +152,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 **Patrícia Lisboa**
 
 - GitHub: [@PatriciaLisboa](https://github.com/PatriciaLisboa)
+- LinkedIn: [Patrícia Lisboa](https://www.linkedin.com/in/patricia-lisboa)
 
 ---
 
